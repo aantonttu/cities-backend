@@ -24,9 +24,10 @@ public class CitiesApplication {
 		List<List<String>> records = new ArrayList<>();
 		try (BufferedReader br = new BufferedReader(
 				new FileReader(
-						"C:/Users/MSI/IdeaProjects/cities/src/main/java/com/example/cities/cities.csv"))) {
+						"src/main/resources/cities.csv"))) {
 			String line;
 			while ((line = br.readLine()) != null) {
+				System.out.println(line);
 				String[] values = line.split(",");
 				records.add(Arrays.asList(values));
 			}
@@ -76,20 +77,6 @@ public class CitiesApplication {
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
-
-//		try {
-//			conn = DriverManager.getConnection(url, user, password);
-//
-//			Statement stCreateUsers = conn.createStatement();
-//			ResultSet rsCreateUsers = stCreateUsers.executeQuery(
-//					"create table if not exists cities_schema.users " +
-//							"(id integer, username varchar(255), password varchar(255), role_allow_edit boolean)");
-//
-//			System.out.println(rsCreateUsers);
-//
-//		} catch (SQLException e) {
-//			System.out.println(e.getMessage());
-//		}
 
 
 		try {
